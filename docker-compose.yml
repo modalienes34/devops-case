@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+    django:
+        image: baykar-efor-takipefor-django:latest
+        container_name: django
+        ports:
+            - "8000:8000"
+        environment:
+            - POSTGRES_DB=efortest
+            - POSTGRES_USER=efortest
+            - POSTGRES_PASSWORD=123456
+        depends_on:
+            - pgdb
+    pgdb:
+        image: postgres:latest
+        container_name: pgdb
+        volumes:
+            - pgdata:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_DB=efortest
+            - POSTGRES_USER=efortest
+            - POSTGRES_PASSWORD=123456
+    pgadmin:
+        image: dpage/pgadmin4:latest
+        depends_on:
+            - pgdb
+        ports:
+            - "5555:80"
+        environment:
+            PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+            PGADMIN_DEFAULT_PASSWORD: admin
+volumes:
+    pgdata:
