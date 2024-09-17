@@ -37,6 +37,8 @@ phases:
       - docker tag $REPOSITORY_URI_REACT_APP:latest $NEW_IMAGE_REACT_APP
       - docker push $NEW_IMAGE_REACT_APP
       - echo Modifying manifests...
+      - sed -i "s|ECRIMAGE|${NEW_IMAGE_API_SERVER}|g" deployment_files/api-server.yml
+      - sed -i "s|ECRIMAGE|${NEW_IMAGE_REACT_APP}|g" deployment_files/react-app.yml
       - echo Run deployment...
       - kubectl apply -f deployment-files/react-app.yml
       - kubectl apply -f deployment-files/api-server.yml
