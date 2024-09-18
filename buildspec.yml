@@ -35,9 +35,9 @@ phases:
       - sed -i "s|API_SERVER_IMAGE|${NEW_IMAGE_API_SERVER}|g" ./docker-compose.yml
       - sed -i "s|REACT_APP_IMAGE|${NEW_IMAGE_REACT_APP}|g" ./docker-compose.yml
       - echo "Transferring Docker Compose file to EC2 instance"
-      - scp -i /home/ubuntu/devops-case.pem -o StrictHostKeyChecking=no docker-compose.yml ec2-user@ec2-3-70-99-38.eu-central-1.compute.amazonaws.com:/home/ubuntu/
+      - scp -i /home/ubuntu/devops-case.pem -o StrictHostKeyChecking=no docker-compose.yml ubuntu@ec2-3-70-99-38.eu-central-1.compute.amazonaws.com:/home/ubuntu/
       - echo "Connecting to EC2 instance and running Docker Compose"
-      - ssh -i /home/ubuntu/devops-case.pem -o StrictHostKeyChecking=no ec2-user@ec2-3-70-99-38.eu-central-1.compute.amazonaws.com "cd /home/ubuntu/ && docker-compose up -d"
+      - ssh -i /home/ubuntu/devops-case.pem -o StrictHostKeyChecking=no ubuntu@ec2-3-70-99-38.eu-central-1.compute.amazonaws.com "cd /home/ubuntu/ && docker-compose up -d"
       - echo All success!
 artifacts:
   files:
