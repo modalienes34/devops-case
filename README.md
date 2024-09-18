@@ -1,12 +1,20 @@
 # API Uygulaması Kurulum Rehberi
 
-![Uygulama Mimari Resmi](./snaps/Create_Record.PNG)
+![Uygulama Mimari Resmi](./snaps/create_1.PNG)
 
-![Uygulama Mimari Resmi](./snaps/Status.PNG)
+![Uygulama Mimari Resmi](./snaps/create_2.PNG)
 
-![Uygulama Mimari Resmi](./snaps/Record.PNG)
+![Uygulama Mimari Resmi](./snaps/create_3.PNG)
 
-![Uygulama Mimari Resmi](./snaps/Update.PNG)
+![Uygulama Mimari Resmi](./snaps/api-status.PNG)
+
+![Uygulama Mimari Resmi](./snaps/records.PNG)
+
+![Uygulama Mimari Resmi](./snaps/update_1.PNG)
+
+![Uygulama Mimari Resmi](./snaps/update_2.PNG)
+
+![Uygulama Mimari Resmi](./snaps/update_3.PNG)
 
 
 
@@ -35,6 +43,8 @@ Bu uygulama, üç farklı microservice üzerinde çalışmaktadır: `client` (re
 6. Yeni derlediğimiz image dosyalarının isimleri sed komutu kullanılarak docker-compose dosyasına yerleştirilir.
 7. scp kullanılarak docker-compose.yml dosyası uzak sunucuya kopyalanır ve ssh komutu ile birlikte bu dosya up edilir ve uygulama stack'imiz uzak sunucuda deploy edilir.
 
-## Lisans
+![Uygulama Mimari Resmi](./snaps/build_1.PNG)
 
-Bu proje [MIT lisansı](LICENSE.md) altında lisanslanmıştır.
+![Uygulama Mimari Resmi](./snaps/build_2.PNG)
+
+![Uygulama Mimari Resmi](./snaps/server.PNG)
